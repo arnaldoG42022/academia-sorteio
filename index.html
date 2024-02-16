@@ -17,7 +17,7 @@
             text-align: center;
         }
         .container {
-            background: rgba(0, 0, 0, 0.5); 
+            background: rgba(0, 0, 255, 0.5); /* Muda a cor para azul semi-transparente */
             padding: 20px; 
             border-radius: 10px;
         }
@@ -30,31 +30,30 @@
         button {
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #1379e6; /* Cor de fundo do botão */
-            color: rgb(255, 255, 255); /* Cor do texto do botão */
-            border: none; /* Remove a borda padrão do botão */
-            cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
-            border-radius: 20px; /* Arredonda as bordas do botão */
-            font-size: 16px; /* Ajusta o tamanho da fonte do botão */
-            transition: background-color 0.3s; /* Suaviza a transição de cor de fundo ao passar o mouse */
+            background-color: #1379e6;
+            color: rgb(255, 255, 255);
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
+            background-color: #0056b3;
         }
         
-        /* Media Query para telas até 600px de largura */
         @media (max-width: 600px) {
             .imagem-academia {
-                max-width: 80%; /* Ajusta a largura máxima para telas menores */
+                max-width: 80%;
             }
             .container, button {
-                padding: 5px; /* Reduz o padding para telas menores */
+                padding: 10px;
             }
             h1, label, button {
-                font-size: 14px; /* Reduz o tamanho da fonte para elementos textuais em telas menores */
+                font-size: 14px;
             }
             button {
-                margin-top: 10px; /* Ajusta a margem superior do botão para telas menores */
+                margin-top: 10px;
             }
         }
     </style>
