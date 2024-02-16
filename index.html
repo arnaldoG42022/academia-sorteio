@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site do sorteio</title>
+    <style>
+        body {
+            background: url('imagemacademia.png') no-repeat center center fixed; 
+            background-size: cover; 
+            height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            flex-direction: column; 
+            color: rgb(6, 6, 6); 
+            text-align: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.5); 
+            padding: 20px; 
+            border-radius: 10px;
+        }
+        .imagem-academia {
+            max-width: 50%;
+            height: auto; 
+            margin: 20px auto; 
+            display: block;
+        }
+        button {
+            margin-top: 20px; /* Adiciona uma margem superior para baixar o botão */
+            padding: 10px 20px;
+            background-color: #1379e6; /* Cor de fundo do botão */
+            color: rgb(255, 255, 255); /* Cor do texto do botão */
+            border: none; /* Remove a borda padrão do botão */
+            cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+            border-radius: 20px; /* Arredonda as bordas do botão */
+            font-size: 16px; /* Ajusta o tamanho da fonte do botão */
+            transition: background-color 0.3s; /* Suaviza a transição de cor de fundo ao passar o mouse */
+        }
+        button:hover {
+            background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sorteio Studio Fitness KRK</h1>
+        <img src="imagemacademia2.jpeg" alt="Imagem da Academia" class="imagem-academia">
+        <label for="ultimoNumero" style="color: white;">Digite o último número que pagou a mensalidade:</label><br>
+        <input type="number" id="ultimoNumero" min="1"><br>
+        
+        <button onclick="sortear()">Sortear</button>
+        <h2 id="resultado"></h2>
+    </div>
+
+    <script>
+        function sortear() {
+            const ultimoNumero = document.getElementById('ultimoNumero').value;
+            const numeroSorteado = Math.floor(Math.random() * ultimoNumero) + 1;
+            document.getElementById('resultado').innerText = `Número sorteado: ${numeroSorteado}`;
+        }
+    </script>
+</body>
+</html>
