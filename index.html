@@ -28,28 +28,43 @@
             display: block;
         }
         button {
-            margin-top: 20px; 
+            margin-top: 20px;
             padding: 10px 20px;
-            background-color: #1379e6; 
-            color: rgb(255, 255, 255); 
-            border: none; 
-            cursor: pointer; 
-            border-radius: 20px; 
-            font-size: 16px; 
-            transition: background-color 0.3s; 
+            background-color: #1379e6; /* Cor de fundo do botão */
+            color: rgb(255, 255, 255); /* Cor do texto do botão */
+            border: none; /* Remove a borda padrão do botão */
+            cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+            border-radius: 20px; /* Arredonda as bordas do botão */
+            font-size: 16px; /* Ajusta o tamanho da fonte do botão */
+            transition: background-color 0.3s; /* Suaviza a transição de cor de fundo ao passar o mouse */
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
+        }
+        
+        /* Media Query para telas até 600px de largura */
+        @media (max-width: 600px) {
+            .imagem-academia {
+                max-width: 80%; /* Aumenta a largura máxima para telas pequenas */
+            }
+            .container, button {
+                padding: 10px; /* Reduz o padding para telas pequenas */
+            }
+            h1, label, button {
+                font-size: 14px; /* Diminui o tamanho da fonte para elementos textuais */
+            }
+            button {
+                margin-top: 10px; /* Ajusta a margem superior do botão */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Sorteio Studio Fitness KRK</h1>
-        <img src="imagemacademia1.png" alt="Imagem da Academia" class="imagem-academia">
+        <img src="imagemacademia2.jpeg" alt="Imagem da Academia" class="imagem-academia">
         <label for="ultimoNumero" style="color: white;">Digite o último número que pagou a mensalidade:</label><br>
         <input type="number" id="ultimoNumero" min="1"><br>
-        
         <button onclick="sortear()">Sortear</button>
         <h2 id="resultado"></h2>
     </div>
