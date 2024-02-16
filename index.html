@@ -45,16 +45,16 @@
         /* Media Query para telas até 600px de largura */
         @media (max-width: 600px) {
             .imagem-academia {
-                max-width: 80%; /* Aumenta a largura máxima para telas pequenas */
+                max-width: 80%; /* Ajusta a largura máxima para telas menores */
             }
             .container, button {
-                padding: 10px; /* Reduz o padding para telas pequenas */
+                padding: 10px; /* Reduz o padding para telas menores */
             }
             h1, label, button {
-                font-size: 14px; /* Diminui o tamanho da fonte para elementos textuais */
+                font-size: 14px; /* Reduz o tamanho da fonte para elementos textuais em telas menores */
             }
             button {
-                margin-top: 10px; /* Ajusta a margem superior do botão */
+                margin-top: 10px; /* Ajusta a margem superior do botão para telas menores */
             }
         }
     </style>
@@ -62,7 +62,7 @@
 <body>
     <div class="container">
         <h1>Sorteio Studio Fitness KRK</h1>
-        <img src="imagemacademia2.jpeg" alt="Imagem da Academia" class="imagem-academia">
+        <img src="imagemacademia1.png" alt="Imagem da Academia" class="imagem-academia">
         <label for="ultimoNumero" style="color: white;">Digite o último número que pagou a mensalidade:</label><br>
         <input type="number" id="ultimoNumero" min="1"><br>
         <button onclick="sortear()">Sortear</button>
