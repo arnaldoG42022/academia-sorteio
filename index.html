@@ -31,7 +31,7 @@
             margin-top: 20px;
             padding: 10px 20px;
             background-color: #1379e6; 
-            color: rgb(255, 255, 255);
+            color: rgb(255, 255, 255); 
             border: none; 
             cursor: pointer; 
             border-radius: 20px; 
@@ -41,20 +41,33 @@
         button:hover {
             background-color: #0056b3; 
         }
-        
-      
+        .roletaContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        #roletaImg {
+            animation: girar 4s linear infinite;
+            width: 100px; /* Ajuste conforme necessário */
+            height: auto;
+        }
+        @keyframes girar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
         @media (max-width: 600px) {
             .imagem-academia {
-                max-width: 80%;
+                max-width: 80%; 
             }
             .container, button {
-                padding: 10px; 
+                padding: 20px; 
             }
             h1, label, button {
                 font-size: 14px; 
             }
             button {
-                margin-top: 10px;
+                margin-top: 10px; 
             }
         }
     </style>
@@ -66,14 +79,29 @@
         <label for="ultimoNumero" style="color: white;">Digite o último número que pagou a mensalidade:</label><br>
         <input type="number" id="ultimoNumero" min="1"><br>
         <button onclick="sortear()">Sortear</button>
-        <h2 id="resultado"></h2>
+        <div class="roletaContainer">
+            <img src="roleta.png" id="roletaImg" alt="Roleta"> <!-- Lembre-se de substituir 'roleta.png' pelo caminho correto da sua imagem da roleta -->
+        </div>
+        <h2 id="resultado">Aguarde o sorteio...</h2>
     </div>
 
     <script>
         function sortear() {
-            const ultimoNumero = document.getElementById('ultimoNumero').value;
-            const numeroSorteado = Math.floor(Math.random() * ultimoNumero) + 1;
-            document.getElementById('resultado').innerText = `Número sorteado: ${numeroSorteado}`;
+            const roletaImg = document.getElementById('roletaImg');
+            roletaImg.style.animation = "girar 4s linear infinite";
+
+            let contador = 0;
+            const intervalo = setInterval(() => {
+                const ultimoNumero = document.getElementById('ultimoNumero').value;
+                const numeroAleatorio = Math.floor(Math.random() * ultimoNumero) + 1;
+                document.getElementById('resultado').innerText = `Número: ${numeroAleatorio}`;
+                contador++;
+                if (contador >= 40) { // Aproximadamente 4 segundos, ajuste conforme necessário
+                    clearInterval(intervalo);
+                    document.getElementById('resultado').innerText = `Sorteado: ${numeroAleatorio}`;
+                    roletaImg.style.animation = "none";
+                }
+            }, 200); // Ajuste conforme necessário
         }
     </script>
 </body>
