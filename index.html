@@ -48,7 +48,6 @@
             margin-top: 20px;
         }
         #roletaImg {
-            animation: girar 4s linear infinite;
             width: 100px; /* Ajuste conforme necessário */
             height: auto;
         }
@@ -80,15 +79,15 @@
         <input type="number" id="ultimoNumero" min="1"><br>
         <button onclick="sortear()">Sortear</button>
         <div class="roletaContainer">
-            <img src="roleta.png" id="roletaImg" alt="Roleta"> <!-- Lembre-se de substituir 'roleta.png' pelo caminho correto da sua imagem da roleta -->
+            <img src="roleta.png" id="roletaImg" alt="Roleta"> 
         </div>
-        <h2 id="resultado">Aguarde o sorteio...</h2>
+        <h2 id="resultado">Aguarde...</h2>
     </div>
 
     <script>
         function sortear() {
             const roletaImg = document.getElementById('roletaImg');
-            roletaImg.style.animation = "girar 4s linear infinite";
+            roletaImg.style.animation = "girar 4s linear";
 
             let contador = 0;
             const intervalo = setInterval(() => {
@@ -96,7 +95,7 @@
                 const numeroAleatorio = Math.floor(Math.random() * ultimoNumero) + 1;
                 document.getElementById('resultado').innerText = `Número: ${numeroAleatorio}`;
                 contador++;
-                if (contador >= 40) { // Aproximadamente 4 segundos, ajuste conforme necessário
+                if (contador >= 20) { // Aproximadamente 4 segundos, ajuste conforme necessário
                     clearInterval(intervalo);
                     document.getElementById('resultado').innerText = `Sorteado: ${numeroAleatorio}`;
                     roletaImg.style.animation = "none";
